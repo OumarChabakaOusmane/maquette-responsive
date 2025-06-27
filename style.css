@@ -372,3 +372,97 @@ footer p {
 
 /* Suppression de l'ancien style services/services-item/service-icon/service-text */
 .services, .service-item, .service-icon, .service-text { display: none !important; }
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Tablettes (<= 1024px) */
+@media (max-width: 1024px) {
+  .products-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .plants-special-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  header {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+  .section {
+    padding: 40px 10px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10px;
+    text-align: center;
+  }
+}
+
+/* Mobiles (<= 700px) */
+@media (max-width: 700px) {
+  .products-grid-4,
+  .products-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .plants-special-layout {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .plant-left img, .plant-right img,
+  .products-grid-3 .product img,
+  .product img {
+    min-height: 180px;
+    max-height: 250px;
+    height: 180px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .services-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  .service {
+    padding: 10px 0;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+  .logo img {
+    height: 38px;
+  }
+  .btn-en-savoir-plus {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+}
+
+/* Petits mobiles (<= 400px) */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+  .product-info {
+    padding: 10px 5px 8px 5px;
+    min-height: 40px;
+  }
+  .btn-en-savoir-plus {
+    font-size: 0.85rem;
+    padding: 6px 5px;
+  }
+}

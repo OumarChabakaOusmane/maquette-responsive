@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-left: 0;
+}
+
+nav {
+    order: 1;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-top: -10vh;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-down span {
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+/* Services avec icônes SVG */
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.service-item {
+    width: 30%;
+    padding: 0 15px;
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+}
+
+.service-text {
+    line-height: 1.2;
+    font-size: 0.95rem;
+}
+
+.service-text p {
+    margin-bottom: 3px;
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #2ecc71;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #27ae60;
+}
+
+.service-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.35rem;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* Sections produits */
+.section {
+    padding: 60px 40px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #2ecc71;
+    border-radius: 2px;
+}
+
+/* Grille pour meilleures ventes (4 colonnes) */
+.products-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Disposition spéciale pour Nos plantes (1 image à gauche, 2 empilées à droite) */
+.plants-special-layout {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: unset;
+    margin: 0;
+    align-items: stretch;
+}
+
+.plant-left, .plant-right {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plant-left .product {
+    height: 100%;
+}
+
+.plant-right {
+    justify-content: space-between;
+}
+
+.plant-right .product {
+    flex: 1 1 0;
+    height: 0;
+    min-height: 0;
+}
+
+.plant-left img, .plant-right img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    max-height: 700px;
+    object-fit: cover;
+    display: block;
+}
+
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.product-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px 20px 15px 20px;
+    background: rgba(255,255,255,0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+    min-height: 70px;
+}
+
+.product-name,
+.product-price {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.product-price {
+    color: #92D293;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.btn-en-savoir-plus {
+    margin-top: auto;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: block;
+    width: calc(100% - 30px);
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-en-savoir-plus:hover {
+    background-color: #27ae60;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.products-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: unset;
+    margin: 40px 0 0 0;
+}
+
+.products-grid-3 .product {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.products-grid-3 .product img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.plant-left .product,
+.plant-right .product {
+    min-height: 420px;
+}
+
+.plant-left img, .plant-right img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    max-width: unset;
+    margin: 0 0 40px 0;
+    padding: 20px 0;
+}
+
+.service {
+    flex: 1 1 0;
+    text-align: center;
+    padding: 15px;
+    min-width: 0;
+}
+
+/* Suppression de l'ancien style services/services-item/service-icon/service-text */
+.services, .service-item, .service-icon, .service-text { display: none !important; }
